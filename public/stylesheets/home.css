@@ -1,3 +1,12 @@
+.align-center{
+	text-align: center;
+}
+
+body *{
+	font-family: 'Abril Fatface', cursive;
+	-webkit-backface-visibility: hidden;
+}
+
 button:focus{
 	outline: none !important;
 }
@@ -11,7 +20,7 @@ button:focus{
 }
 
 #blog .blog img{
-	height: 35vh;
+	height: 30vh;
 }
 
 #blog .card-img-overlay{
@@ -20,14 +29,43 @@ button:focus{
     background: rgba(19, 18, 18, 0.7);
 }
 
+#blog h2{
+	color: #587fbf;
+}
+
 .card-title{
 	font-size: 3vw;
+}
+
+#blog .card{
+	border: 6px solid #587fbf;
 }
 
 .center-content{
 	display: flex;
   	justify-content: flex-end;
   	align-items: center;
+}
+
+#class-conference h2{
+	text-align: center;
+	color: white;
+	font-size: 2.65vw;
+}
+
+#class-conference h2 #conference{
+	color: #58bf66;
+	font-family: 'Roboto Mono', monospace;
+}
+
+#class-conference h2 strong{
+	color: #58bf66;
+}
+
+#class-conference h2 #classrooms{
+	color: #58bf66;
+	font-family: 'Gloria Hallelujah', cursive;
+
 }
 
 .done-so-far{
@@ -37,6 +75,8 @@ button:focus{
 .page-title{
 	margin-top: 30px;
 	text-align: center;
+	font-size: 4.5vw;
+	color: white;
 }
 
 #done-so-far{
@@ -44,7 +84,7 @@ button:focus{
 }
 
 #done-so-far > .row{
-	margin: 100px 0;
+	margin: 30px 0;
 }
 
 #done-so-far .title{
@@ -63,17 +103,51 @@ button:focus{
 
 #done-so-far .item{
 	padding: 10px;
-    background: #DFCFBE;
+	background: #58bf66;
+    color: white;
     border-radius: 20px;
     margin-right: 10px;
-    height: 180px;
+    height: 25vh;
     opacity: 0;
 }
 
-#done-so-far .item.show-done{
+
+
+#done-so-far #A.show-done{
+	-webkit-transition: all .1s ease-in;
+  	-moz-transition: all .1s ease-in;
+  	-o-transition: all .1s ease-in;
+  	transition: all .1s ease-in;
 	opacity: 1;
-	transition: 3s;
 }
+
+#done-so-far #B.show-done{
+	-webkit-transition: all .5s ease-in;
+  	-moz-transition: all .5s ease-in;
+  	-o-transition: all .5s ease-in;
+  	transition: all .5s ease-in;
+	opacity: 1;
+	
+}
+
+#done-so-far #C.show-done{
+	-webkit-transition: opacity 1s ease-in;
+  	-moz-transition: opacity 1s ease-in;
+  	-o-transition: opacity 1s ease-in;
+  	transition: opacity 1s ease-in;
+	opacity: 1;
+	
+}
+
+#done-so-far #D.show-done{
+	-webkit-transition: opacity 1.5s ease-in;
+  	-moz-transition: opacity 1.5s ease-in;
+  	-o-transition: opacity 1.5s ease-in;
+  	transition: opacity 1.5s ease-in;
+	opacity: 1;
+}
+
+
 
 
 
@@ -87,17 +161,25 @@ button:focus{
 }
 
 #lets-connect .container{
-	margin: 0 100px;
+	/*margin: 0 100px;*/
 }
 
-#lets-connect .fa{
+#lets-connect .page-title{
+	color: #292626;
+}
+
+#lets-connect .fab{
   font-size: 30px;
-  padding: 2%;
+  padding: 25%;
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
   color: white;
   display: inline;
+}
+
+#projects-page h2{
+	font-size: 2.5vw;
 }
 
 .fa-facebook{
@@ -127,7 +209,7 @@ button:focus{
 	position: relative;
 	text-align: center;
 	color: white;
-	margin-bottom: 12vh;
+	margin-bottom: 9vh;
 }
 
 .more-info{
@@ -152,7 +234,7 @@ button:focus{
     background: rgba(0,0,0,0.6);
     width: 25%;
     vertical-align: center;
-    padding: 30px;
+    padding: 3vw;
     height: 100%;
 }
 
@@ -171,9 +253,33 @@ button:focus{
 	background-color: #f5f5f5;
 }
 
+.light-green{
+	background-color: #e0ffe5;
+}
+
+.light-blue{
+	background-color: #e0f4ff
+}
+
+#lets-connect h2{
+	font-size: 2.5vw;
+}
+
+#lets-connect h3{
+	font-size: 2.2vw;
+}
+
+.dark-background{
+	background: #292626;
+}
+
+#projects-page h2 strong{
+	color: #bf5858;
+}
+
 #experience-page img{
 	border-radius: 25px;
-	width: 280px;
+	width: 250px;
 }
 
 li{
@@ -194,17 +300,27 @@ li{
 }
 
 #projects-page #proficient.show{
-	transition: 2s;
+	-webkit-transition: left .5s linear;
+  	-moz-transition: left .5s linear;
+  	-o-transition: left .5s linear;
+  	transition: left .5s linear;
+
 	left:0;
 }
 
 #projects-page #audio-amplifier.show{
-	transition: 3s;
+	-webkit-transition: left 1s linear;
+  	-moz-transition: left 1s linear;
+  	-o-transition: left 1s linear;
+  	transition: left 1s linear;
 	left:0;
 }
 
 #projects-page #idk-yet.show{
-	transition: 4s;
+	-webkit-transition: left 1.5s linear;
+  	-moz-transition: left 1.5s linear;
+  	-o-transition: left 1.5s linear;
+  	transition: left 1.5s linear;
 	left:0;
 }
 
@@ -217,15 +333,98 @@ li{
 	left: -3000px;
 	margin: 10px 10%;
 	border-radius: 25px;
-	background: #659DBD;
+	background: #bf5858;
+	/*z-index: 30;*/
+	-webkit-backface-visibility: hidden;
+}
+
+#projects-page *{
+	color: white;
 }
 
 #projects-page .item p{
 	text-align: justify;
 }
-.slides{
-	border-radius: 25px;
+
+#projects-page .item h3{
+	font-size: 1.25rem;
 }
+
+#projects-page .slides{
+	border-radius: 25px;
+	height: 22vh;
+}
+
+#projects-page .slides img{
+	display: none;
+/*	animation-name: disappear;
+	animation-duration: 1s;*/
+}
+
+
+#projects-page .slides img.display{
+	display: block;
+	animation-name: showMe;
+	animation-duration: 5s;
+/*	animation-name: disappear;
+	animation-duration: .5s;*/
+}
+
+@keyframes showMe {
+  0%   {height: 0%;}
+  1%   {height: 5%;}
+  2%   {height: 10%;}
+  3%  {height: 15%;}
+  4%   {height: 20%;}
+  5%   {height: 25%;}
+  6%   {height: 30%;}
+  7%   {height: 35%;}
+  8%   {height: 40%;}
+  9%   {height: 45%;}
+  10%   {height: 50%;}
+  11%   {height: 55%;}
+  12%   {height: 60%;}
+  13%   {height: 65%;}
+  14%   {height: 70%;}
+  15%   {height: 75%;}
+  16%   {height: 80%;}
+  17%   {height: 85%;}
+  18%   {height: 90%;}
+  19%   {height: 95%;}
+  20%  {height: 100%;}
+  25%  {height: 100%;}
+  30%  {height: 100%;}
+  35%  {height: 100%;}
+  40%  {height: 100%;}
+  45%  {height: 100%;}
+  50%  {height: 100%;}
+  60%  {height: 100%;}
+  70%  {height: 100%;}
+  80%  {height: 100%;}
+
+  81%  {height: 95%;}
+  82%  {height: 90%;}
+  83%  {height: 85%;}
+  84%  {height: 80%;}
+  85%  {height: 75%;}
+  86%  {height: 70%;}
+  87%  {height: 65%;}
+  88%  {height: 60%;}
+  89%  {height: 55%;}
+  90%  {height: 50%;}
+  91%  {height: 45%;}
+  92%  {height: 40%;}
+  93%  {height: 35%;}
+  94%  {height: 30%;}
+  95%  {height: 25%;}
+  96%  {height: 20%;}
+  97%  {height: 15%;}
+  98%  {height: 10%;}
+  99%  {height: 5%;}
+  100%  {height: 0%;}
+
+}
+
 
 .slides .slide-toggle{
     z-index: 999;
@@ -247,7 +446,7 @@ li{
 }
 
 #social-links{
-	margin-top: 100px;
+	margin: 100px 5vw;
 }
 
 .truncate {
@@ -255,6 +454,18 @@ li{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.red{
+	color:#bf5858;
+}
+
+.blue{
+	color:#587fbf;
+}
+
+.green{
+	color:#58bf66;
 }
 
 /*#menu{

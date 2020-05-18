@@ -7,18 +7,43 @@ $(".main").onepage_scroll({
    animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
    pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
    updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-   beforeMove: function(index){ 
+   beforeMove: function(index){
+
+      switch(index){
+         case 1: $('#welcome').css('display', 'block');
+                  $('#landing').css('display', 'block');
+         case 2: $('#done-so-far').css('display', 'block');
+         case 3:  $('#projects-page').css('display', 'block');
+         case 4: $('#blog').css('display', 'block');
+      }
+      
+
       if(index === 3){
          for(var i =0; i<$('#projects-page .item').length; i++){
             $('#projects-page .item').addClass('show', i+3, 'swing,');
          }
       }
 
+      
+   },  // This option accepts a callback function. The function will be called before the page moves.
+   afterMove: function(index) {
+      $('#landing').css('display', 'none');
+      $('#welcome').css('display', 'none');
+      $('#done-so-far').css('display', 'none');
+      $('#projects-page').css('display', 'none');
+      $('#blog').css('display', 'none');
+      switch(index){
+         case 1: $('#welcome').css('display', 'block');
+                  $('#landing').css('display', 'block');
+         case 2: $('#done-so-far').css('display', 'block');
+         case 3:  $('#projects-page').css('display', 'block');
+         case 4: $('#blog').css('display', 'block');
+      }
+
       if(index===2){
          $('#done-so-far .item').addClass('show-done');
       }
-   },  // This option accepts a callback function. The function will be called before the page moves.
-   afterMove: function(index) {},   // This option accepts a callback function. The function will be called after the page moves.
+   },   // This option accepts a callback function. The function will be called after the page moves.
    loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
    keyboard: true,                  // You can activate the keyboard controls
    responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
@@ -27,26 +52,27 @@ $(".main").onepage_scroll({
    direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
 });
 
-slideShowIds.forEach(function(id){
-   for(var i =1; i < $(id + ' .slides img').length; i++){
-         $(id + ' .slides img').slice(i, i+1).css('display', 'none');   
-      }
-});
+// slideShowIds.forEach(function(id){
+//    for(var i =1; i < $(id + ' .slides img').length; i++){
+//          $(id + ' .slides img').slice(i, i+1).css('display', 'none');   
+//       }
+// });
 
-
+var ct =-1;
 slideShowIds.forEach(function(id){
+   ct++;
    var index =1;
    setInterval(function(){ 
       for(var i =0; i < $(id + ' .slides img').length; i++){
-         $(id + ' .slides img').slice(i, i+1).css('display', 'none');   
+         $(id + ' .slides img').slice(i, i+1).removeClass('display');   
       }
 
-      $(id + ' .slides img').slice(index, index+1).css('display', 'block');
+      $(id + ' .slides img').slice(index, index+1).addClass('display');
       index++;
       
       if(index > $(id + ' .slides img').length-1){
          index = 0;
       }
-   }, 1500);
+   }, 5000);
 });
 
