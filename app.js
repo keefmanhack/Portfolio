@@ -4,15 +4,8 @@ var express 			= require("express"),
     mongoose 			= require('mongoose');
 
 var indexRoutes 		= require('./routes/index');
-//Mongoose random things
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
 
-let mongoUrl = process.env.PROFICIENT_MONGO_DB;
 
-// mongoose.connect(mongoUrl);
 
 app.use(bodyParser.urlencoded({extended:true}));
 
