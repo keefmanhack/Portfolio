@@ -5,4 +5,8 @@ var express = require("express"),
 		res.render('home');
 	});
 
+	router.get('/nonsense', function(req, res){
+		res.redirect('/');
+	})
+
 module.exports = router;
