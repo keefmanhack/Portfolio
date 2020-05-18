@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public')); //for js scripts
-app.use(express.static(__dirname + '/Views')); //for js scripts
+app.set('views', __dirname + '/Views');
 app.use(express.static('client/build'));
 
 app.get('/', function(req, res){
