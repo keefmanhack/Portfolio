@@ -3,7 +3,7 @@ var express 			= require("express"),
     bodyParser			= require('body-parser'),
     mongoose 			= require('mongoose');
 
-var indexRoutes 		= require('./routes/index');
+var indexRoutes 		= require('./Routes/index');
 
 
 
