@@ -1,3 +1,17 @@
+@media screen and (max-width: 600px){
+	/*#lets-connect #social-links{
+		margin: 20px 5vw;
+	}*/
+
+	#lets-connect #social-links .col{
+		padding: 2px;
+	}
+
+	#lets-connect .fab{
+		padding: 10px;
+	}
+}
+
 @media screen and (max-width: 877px){
 	#landing{
 		width: auto;

@@ -161,6 +161,7 @@ button:focus{
 }
 
 #lets-connect .container{
+	padding:0;
 	/*margin: 0 100px;*/
 }
 
@@ -177,6 +178,8 @@ button:focus{
   color: white;
   display: inline;
 }
+
+#lets-connect .row:before, #lets-connect .row:after {display: inline-block; !important; width: 0px; height: 0px;}
 
 #projects-page h2{
 	font-size: 2.5vw;
@@ -446,7 +449,19 @@ li{
 }
 
 #social-links{
-	margin: 100px 5vw;
+	margin: 8vw auto;
+	text-align: center;
+
+}
+
+/*#lets-connect #social-links.row{
+	margin: 0;
+	padding: 0;
+}*/
+
+#lets-connect #social-links.row .col{
+	margin: 0;
+	padding: 0;
 }
 
 .truncate {
