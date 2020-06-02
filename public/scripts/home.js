@@ -1,62 +1,40 @@
 var slideShowIds = ['#proficient', '#audio-amplifier', '#idk-yet'];
 
-$(".main").onepage_scroll({
-   sectionContainer: "section",
-   easing: "ease",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
-                                    // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-   animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
-   pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
-   updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
-   beforeMove: function(index){
 
-      switch(index){
-         case 1: $('#welcome').css('display', 'block');
-                  $('#landing').css('display', 'block');
-         case 2: $('#done-so-far').css('display', 'block');
-         case 3:  $('#projects-page').css('display', 'block');
-         case 4: $('#blog').css('display', 'block');
+let last_known_scroll_position = 0;
+let ticking = false;
+
+function doSomething(scroll_pos) {
+   console.log(scroll_pos);
+  if (scroll_pos > 350){
+   $('#done-so-far .item').addClass('show-done');
+  }
+  if (scroll_pos > 800){
+      for(var i =0; i<$('#projects-page .item').length; i++){
+         $('#projects-page .item').addClass('show', i+3, 'swing,');
       }
       
+  }
+}
 
-      if(index === 3){
-         for(var i =0; i<$('#projects-page .item').length; i++){
-            $('#projects-page .item').addClass('show', i+3, 'swing,');
-         }
-      }
+window.addEventListener('scroll', function(e) {
+  last_known_scroll_position = window.scrollY;
 
-      
-   },  // This option accepts a callback function. The function will be called before the page moves.
-   afterMove: function(index) {
-      $('#landing').css('display', 'none');
-      $('#welcome').css('display', 'none');
-      $('#done-so-far').css('display', 'none');
-      $('#projects-page').css('display', 'none');
-      $('#blog').css('display', 'none');
-      switch(index){
-         case 1: $('#welcome').css('display', 'block');
-                  $('#landing').css('display', 'block');
-         case 2: $('#done-so-far').css('display', 'block');
-         case 3:  $('#projects-page').css('display', 'block');
-         case 4: $('#blog').css('display', 'block');
-      }
+  if (!ticking) {
+    window.requestAnimationFrame(function() {
+      doSomething(last_known_scroll_position);
+      ticking = false;
+    });
 
-      if(index===2){
-         $('#done-so-far .item').addClass('show-done');
-      }
-   },   // This option accepts a callback function. The function will be called after the page moves.
-   loop: true,                     // You can have the page loop back to the top/bottom when the user navigates at up/down on the first/last page.
-   keyboard: true,                  // You can activate the keyboard controls
-   responsiveFallback: false,        // You can fallback to normal page scroll by defining the width of the browser in which
-                                    // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
-                                    // the browser's width is less than 600, the fallback will kick in.
-   direction: "vertical"            // You can now define the direction of the One Page Scroll animation. Options available are "vertical" and "horizontal". The default value is "vertical".  
+    ticking = true;
+  }
 });
 
-// slideShowIds.forEach(function(id){
-//    for(var i =1; i < $(id + ' .slides img').length; i++){
-//          $(id + ' .slides img').slice(i, i+1).css('display', 'none');   
-//       }
-// });
+$("#learn-more").click(function() {
+    document.getElementById("experience-page").scrollIntoView({behavior: "smooth"});
+});
+
+
 
 var ct =-1;
 slideShowIds.forEach(function(id){
@@ -75,4 +53,3 @@ slideShowIds.forEach(function(id){
       }
    }, 5000);
 });
-

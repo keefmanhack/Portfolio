@@ -11,6 +11,13 @@ button:focus{
 	outline: none !important;
 }
 
+#blog{
+	position: relative;
+	top: -90px;
+	width: 100vw;
+	height: 800px;
+}
+
 #blog .container{
 	margin: 0 5vw;
 }
@@ -20,7 +27,7 @@ button:focus{
 }
 
 #blog .blog img{
-	height: 30vh;
+	height: 275px;
 }
 
 #blog .card-img-overlay{
@@ -72,6 +79,10 @@ button:focus{
 	margin: 0 50px;
 }
 
+#first-page{
+	height: 100vh;
+}
+
 .page-title{
 	margin-top: 30px;
 	text-align: center;
@@ -107,7 +118,7 @@ button:focus{
     color: white;
     border-radius: 20px;
     margin-right: 10px;
-    height: 25vh;
+    height: 165px;
     opacity: 0;
 }
 
@@ -181,6 +192,22 @@ button:focus{
 
 #lets-connect .row:before, #lets-connect .row:after {display: inline-block; !important; width: 0px; height: 0px;}
 
+#projects-page{
+	position: relative;
+	top: -60px;
+	width: 100vw;
+	height: 800px;
+}
+
+#projects-page .project-title{
+	border-right: 1px solid;
+    margin: 5px 0;
+}
+
+#projects-page .project-description{
+    margin: 5px 0;
+}
+
 #projects-page h2{
 	font-size: 2.5vw;
 }
@@ -223,6 +250,8 @@ button:focus{
 #landing{
 	background: lightgrey;
 	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
 /*	z-index: 9;*/
 	position: absolute;
 /*	position: absolute;
@@ -239,6 +268,7 @@ button:focus{
     vertical-align: center;
     padding: 3vw;
     height: 100%;
+    overflow: hidden;
 }
 
 #welcome button{
@@ -280,6 +310,13 @@ button:focus{
 	color: #bf5858;
 }
 
+#experience-page{
+	position: relative;
+	top: -30px;
+	width: 100vw;
+	height: 800px;
+}
+
 #experience-page img{
 	border-radius: 25px;
 	width: 250px;
@@ -299,7 +336,7 @@ li{
 
 #projects-page img{
 	border-radius: 25px;
-	height: 22vh;
+	height: inherit;
 }
 
 #projects-page #proficient.show{
@@ -355,11 +392,12 @@ li{
 
 #projects-page .slides{
 	border-radius: 25px;
-	height: 22vh;
+	height: 125px;
 }
 
 #projects-page .slides img{
 	display: none;
+	margin: 5px 0;
 /*	animation-name: disappear;
 	animation-duration: 1s;*/
 }
@@ -454,10 +492,12 @@ li{
 
 }
 
-/*#lets-connect #social-links.row{
-	margin: 0;
-	padding: 0;
-}*/
+#lets-connect{
+	position: relative;
+	top: -120px;
+	width: 100vw;
+	height: 700px;
+}
 
 #lets-connect #social-links.row .col{
 	margin: 0;
